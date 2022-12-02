@@ -1,0 +1,81 @@
+﻿@model IEnumerable<online_test.Models.Exam_Schedule>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>EXAM-SCHEDULE</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="row">
+    <div class="col-12">
+        <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class=" bg-gradient-dark border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Exam-Schedule table</h6>
+                </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+                <div class="table-responsive p-0">
+                    <table class="table align-items-center mb-0">
+                        <tr>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("Exam_date")
+                            </th>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("Exam_title")
+                            </th>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("Exam_duration")
+                            </th>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("Exam_total_question")
+                            </th>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("Exam_status")
+                            </th>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("Course_id")
+                            </th>
+                            <th>
+                            </th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Exam_date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Exam_title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Exam_duration)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Exam_total_question)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Exam_status)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Course_id)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

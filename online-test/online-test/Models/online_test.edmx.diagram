@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e80a08fe0829487fb05155cb276626ec" Name="Diagram1">
+        <EntityTypeShape EntityType="Database1Model.assigned_user_exam" Width="1.5" PointX="8.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Canditate_info" Width="1.5" PointX="2.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Course_tbl" Width="1.5" PointX="8.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Edu_tbl" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Exam_Schedule" Width="1.5" PointX="6.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Manager_info" Width="1.5" PointX="4.375" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.Question_bank" Width="1.5" PointX="10.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.User_Exam_Answer" Width="1.5" PointX="10.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.work_dtl_tbl" Width="1.5" PointX="6.25" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.work_tbl" Width="1.5" PointX="4.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Database1Model.edu_dtl_tbl" Width="1.5" PointX="0.5" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="Database1Model.FK__assigned___exam___403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__assigned___user___3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__Canditate__edu_d__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__Canditate__work___3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__Edu_tbl__Candida__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__User_Exam__user___34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__work_tbl__Candid__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__Question___Cours__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__edu_dtl_t__edu_i__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__User_Exam__exam___35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__User_Exam__Quest__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="Database1Model.FK__work_dtl___work___3C69FB99" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

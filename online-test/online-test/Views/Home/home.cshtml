@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<!-- ***** Header Area Start ***** -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <header class="header-area">
+
+
+             <nav class="nav">
+                 <div class="row">
+                        <div class="col-md-2">
+                            <!-- ***** Logo Start ***** -->
+                            <a href="#" class="logo">
+                                <!---logo-->
+                                <img src="~/assets/images/OGC LOGO YASEEN.jpg" style="border-radius:100px; width:40%; margin-top:-19px;" />
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 style="color:black;">OIL-GAS COMPANY</h3>
+                        </div>
+                        <div class="col-md-4">
+                            
+                            <a class="btn btn-dark  bg-gradient-dark" style="margin-left:390px; margin-top:-10px;" href="~/Home/index" type="button">Logout</a>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="~/assets/images/avatar.jpg" style="border-radius:100px; width:30%; margin-top:-19px; margin-left:90px;" />
+                        </div>
+
+
+                    </div>
+
+                </nav>
+            </header>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- ***** Main Banner Area Start ***** -->
+<section class="section main-banner" id="top" data-section="section1">
+    <video autoplay muted loop id="bg-video">
+        <source src="~/assets/images/course-video.mp4" type="video/mp4" />
+    </video>
+    <!--DISCUSS-->
+    <div class="video-overlay header-text">
+        <h1 class="" style="margin-top:200px;color:white; margin-left:20px; font-size:2.3em; font-weight:bold;" >
+            Welcome To Oil-Gas-Company Aptitude Test 
+        </h1><!--edit-->
+        <p style="margin-top:50px;color:white; margin-left:20px; text-decoration:underline #F57854; font-weight:bold; font-size:1.3em;">
+ <br>
+            You will have your test here for eligible here<br>
+            This Test Include Three Subject As follow
+            Maths,<br>General Knowlegde,Computer Technology<br>
+            based on the result of this the candidate will go for<br>
+
+            further rounds.
+        </p>
+    </div>
+</section>
+
+<!--SUBJECTS-->
+<section class="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p style="margin-top:200px; margin-bottom:40px;color:white; margin-left:20px; font-size:2.3em; font-weight:bold;">Click The Link To Start </p>
+            </div>
+            </div>
+        
+        <div class="row">
+
+            
+            <div class="col-md-4">
+
+                @if (Session["mathexam"].ToString() == "1")
+                {
+                    <a href="~/Question_bank/Maths">
+                        <img src="~/assets/images/math.PNG"  style="border-radius:20px" />
+
+                    </a>
+                }
+                else
+                {
+                    <img src="~/assets/images/math.PNG"  style="border-radius:20px" />
+                }
+            </div>
+            <div class="col-md-4">
+                @if (Session["gk_exam"].ToString() == "1")
+                {
+                    <a>
+                        <img src="~/assets/images/gk.PNG"  style="border-radius:20px" />
+                    </a>
+                }
+                else
+                {
+                    <img src="~/assets/images/gk.PNG"  style="border-radius:20px" />
+                }
+            </div>
+            <div class="col-md-4">
+                @if (Session["ct_exam"].ToString() == "1")
+                {
+                    <a>
+                        <img src="~/assets/images/computer.PNG"  style="border-radius:20px" />
+                    </a>
+                }
+                else
+                {
+                    <img src="~/assets/images/computer.PNG"  style="border-radius:20px" />
+
+                }
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!--FACTS OF COMPANY--->
+<section class="our-facts">
+    <div class="container" style="margin-top:300px ">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="row">
+                    <div class="col-lg-12" style="margin-top">
+                        <h2>A Few Facts About Our Company</h2>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="count-area-content percentage">
+                                    <div class="count-digit">94</div>
+                                    <div class="count-title">Passed Condidates</div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="count-area-content">
+                                    <div class="count-digit">126</div>
+                                    <div class="count-title">Current Employees</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="count-area-content new-students">
+                                    <div class="count-digit">2345</div>
+                                    <div class="count-title">New Arrivals</div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="count-area-content">
+                                    <div class="count-digit">32</div>
+                                    <div class="count-title">Awards</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 align-self-center">
+                <div class="video">
+                    <a href="https://www.youtube.com/watch?v=qAGtZ27lsxQ" target="_blank"><img src="~/assets/images/play-icon.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--CONTACT FORM-->
+<section class="contact-us" id="contact">
+
+    <div class="footer">
+        <p>
+            Copyright © 2022 OIL-GAS COMPANY Ltd. All Rights Reserved.
+        </p>
+    </div>
+</section>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<online_test.Models.Question_bank>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/quiz.cshtml";
+}
+<h1 style="margin-top:150px;">Maths</h1>
+
+<div class="row">
+    @section featured {
+        <section class="featured">
+            <div class="content-wrapper">
+                <hgroup class="title">
+
+                    <h2>@ViewBag.Message</h2>
+                </hgroup>
+
+            </div>
+        </section>
+    }
+    @foreach (var item in Model)
+    {
+
+        <div class="col-xl-12 col-md-12 mb-xl-0 mb-100 mt-100 align-items-center" style=" margin:3% 0; width:500px;   ">
+            <div>
+
+                <div class="align-content-center mx-auto ml-100" style="margin-left=100;">
+                    <p class="mb-100 text-sm ">Q) @Html.DisplayFor(modelItem => item.Question)</p>
+                    <input type="radio">
+                    @Html.DisplayFor(modelItem => item.Option_1)<br>
+                    <input type="radio">
+
+                    @Html.DisplayFor(modelItem => item.Option_2)<br>
+                    <input type="radio">
+
+                    @Html.DisplayFor(modelItem => item.Option_3)<br>
+                    <input type="radio">
+                    @Html.DisplayFor(modelItem => item.C_Option_4)<br>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+    }
+    <button type="button" class="btn btn-warning">Next</button>
+</div>

@@ -1,0 +1,73 @@
+﻿@model online_test.Models.work_dtl_tbl
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>work_dtl_tbl</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Company_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Company_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Start_year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Start_year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.End_year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.End_year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.work_tbl.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.work_tbl.Id)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

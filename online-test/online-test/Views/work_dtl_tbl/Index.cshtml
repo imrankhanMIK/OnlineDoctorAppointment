@@ -1,0 +1,82 @@
+﻿@model IEnumerable<online_test.Models.work_dtl_tbl>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>WORK DETAILS</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="row">
+    <div class="col-12">
+        <div class="card my-4">
+            <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                <div class=" bg-gradient-dark border-radius-lg pt-4 pb-3">
+                    <h6 class="text-white text-capitalize ps-3">Work Details table</h6>
+                </div>
+            </div>
+            <div class="card-body px-0 pb-2">
+                <div class="table-responsive p-0">
+                    <table class="table align-items-center mb-0">
+                        <tr>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("Company_name")
+                            </th>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("Job_title")
+                            </th>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("Start_year")
+                            </th>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("End_year")
+                            </th>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("Job_description")
+                            </th>
+                            <th class="text-uppercase text-secondary text-s font-weight-bolder">
+                                @Html.DisplayName("work_tbl.Id")
+                            </th>
+                            <th>
+                            </th>
+                        </tr>
+
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Company_name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Job_title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Start_year)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.End_year)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Job_description)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.work_tbl.Id)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                                </td>
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

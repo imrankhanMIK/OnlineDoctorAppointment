@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Database1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="assigned_user_exam">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="exam_id" Type="int" />
+  </EntityType>
+  <EntityType Name="Canditate_info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cell_no" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CNIC" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="edu_dtl" Type="int" Nullable="false" />
+    <Property Name="work_exp" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Course_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Credit_hr" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Course_id" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'C:\USERS\ADV\SOURCE\REPOS\ONLINE-TEST\ONLINE-TEST\APP_DATA\DATABASE1.MDF.dbo.edu_dtl_tbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="edu_dtl_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="edu_id" />
+      <PropertyRef Name="Passing_year" />
+      <PropertyRef Name="Grade" />
+      <PropertyRef Name="Percentage" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="edu_id" Type="int" Nullable="false" />
+    <Property Name="Passing_year" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Grade" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Percentage" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Edu_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Candidate_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exam_Schedule">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Exam_date" Type="date" Nullable="false" />
+    <Property Name="Exam_title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Exam_duration" Type="int" Nullable="false" />
+    <Property Name="Exam_total_question" Type="int" Nullable="false" />
+    <Property Name="Exam_status" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Course_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Manager_info">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pasword" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cell_no" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Question_bank">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Answer" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Option_1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Option_2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Option_3" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name=" Option_4" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Course_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User_Exam_Answer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="exam_id" Type="int" />
+    <Property Name="Answer" Type="varchar" MaxLength="50" />
+    <Property Name="Question_id" Type="int" />
+    <Property Name="Marks" Type="int" />
+  </EntityType>
+  <EntityType Name="work_dtl_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="work_id" Type="int" Nullable="false" />
+    <Property Name="Company_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Job_title" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Start_year" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="End_year" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Job_description" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="work_tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Candidate_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__assigned___exam___403A8C7D">
+    <End Role="Exam_Schedule" Type="Self.Exam_Schedule" Multiplicity="0..1" />
+    <End Role="assigned_user_exam" Type="Self.assigned_user_exam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Exam_Schedule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="assigned_user_exam">
+        <PropertyRef Name="exam_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__assigned___user___3F466844">
+    <End Role="Canditate_info" Type="Self.Canditate_info" Multiplicity="0..1" />
+    <End Role="assigned_user_exam" Type="Self.assigned_user_exam" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canditate_info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="assigned_user_exam">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Canditate__edu_d__3E52440B">
+    <End Role="Edu_tbl" Type="Self.Edu_tbl" Multiplicity="1" />
+    <End Role="Canditate_info" Type="Self.Canditate_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Edu_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Canditate_info">
+        <PropertyRef Name="edu_dtl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Canditate__work___3D5E1FD2">
+    <End Role="work_tbl" Type="Self.work_tbl" Multiplicity="1" />
+    <End Role="Canditate_info" Type="Self.Canditate_info" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="work_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Canditate_info">
+        <PropertyRef Name="work_exp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__edu_dtl_t__edu_i__47DBAE45">
+    <End Role="Edu_tbl" Type="Self.Edu_tbl" Multiplicity="1" />
+    <End Role="edu_dtl_tbl" Type="Self.edu_dtl_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Edu_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="edu_dtl_tbl">
+        <PropertyRef Name="edu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Edu_tbl__Candida__2B3F6F97">
+    <End Role="Canditate_info" Type="Self.Canditate_info" Multiplicity="1" />
+    <End Role="Edu_tbl" Type="Self.Edu_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canditate_info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Edu_tbl">
+        <PropertyRef Name="Candidate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Question___Cours__31EC6D26">
+    <End Role="Course_tbl" Type="Self.Course_tbl" Multiplicity="1" />
+    <End Role="Question_bank" Type="Self.Question_bank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Question_bank">
+        <PropertyRef Name="Course_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Exam__exam___35BCFE0A">
+    <End Role="Exam_Schedule" Type="Self.Exam_Schedule" Multiplicity="0..1" />
+    <End Role="User_Exam_Answer" Type="Self.User_Exam_Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Exam_Schedule">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Exam_Answer">
+        <PropertyRef Name="exam_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Exam__Quest__36B12243">
+    <End Role="Question_bank" Type="Self.Question_bank" Multiplicity="0..1" />
+    <End Role="User_Exam_Answer" Type="Self.User_Exam_Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Question_bank">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Exam_Answer">
+        <PropertyRef Name="Question_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Exam__user___34C8D9D1">
+    <End Role="Canditate_info" Type="Self.Canditate_info" Multiplicity="0..1" />
+    <End Role="User_Exam_Answer" Type="Self.User_Exam_Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canditate_info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User_Exam_Answer">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__work_dtl___work___3C69FB99">
+    <End Role="work_tbl" Type="Self.work_tbl" Multiplicity="1" />
+    <End Role="work_dtl_tbl" Type="Self.work_dtl_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="work_tbl">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="work_dtl_tbl">
+        <PropertyRef Name="work_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__work_tbl__Candid__3B75D760">
+    <End Role="Canditate_info" Type="Self.Canditate_info" Multiplicity="1" />
+    <End Role="work_tbl" Type="Self.work_tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Canditate_info">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="work_tbl">
+        <PropertyRef Name="Candidate_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Database1ModelStoreContainer">
+    <EntitySet Name="assigned_user_exam" EntityType="Self.assigned_user_exam" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Canditate_info" EntityType="Self.Canditate_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Course_tbl" EntityType="Self.Course_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Edu_tbl" EntityType="Self.Edu_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Exam_Schedule" EntityType="Self.Exam_Schedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Manager_info" EntityType="Self.Manager_info" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Question_bank" EntityType="Self.Question_bank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Exam_Answer" EntityType="Self.User_Exam_Answer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="work_dtl_tbl" EntityType="Self.work_dtl_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="work_tbl" EntityType="Self.work_tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="edu_dtl_tbl" EntityType="Self.edu_dtl_tbl" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [edu_dtl_tbl].[Id] AS [Id], 
+    [edu_dtl_tbl].[edu_id] AS [edu_id], 
+    [edu_dtl_tbl].[Passing_year] AS [Passing_year], 
+    [edu_dtl_tbl].[Grade] AS [Grade], 
+    [edu_dtl_tbl].[Percentage] AS [Percentage]
+    FROM [dbo].[edu_dtl_tbl] AS [edu_dtl_tbl]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__assigned___exam___403A8C7D" Association="Self.FK__assigned___exam___403A8C7D">
+      <End Role="Exam_Schedule" EntitySet="Exam_Schedule" />
+      <End Role="assigned_user_exam" EntitySet="assigned_user_exam" />
+    </AssociationSet>
+    <AssociationSet Name="FK__assigned___user___3F466844" Association="Self.FK__assigned___user___3F466844">
+      <End Role="Canditate_info" EntitySet="Canditate_info" />
+      <End Role="assigned_user_exam" EntitySet="assigned_user_exam" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Canditate__edu_d__3E52440B" Association="Self.FK__Canditate__edu_d__3E52440B">
+      <End Role="Edu_tbl" EntitySet="Edu_tbl" />
+      <End Role="Canditate_info" EntitySet="Canditate_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Canditate__work___3D5E1FD2" Association="Self.FK__Canditate__work___3D5E1FD2">
+      <End Role="work_tbl" EntitySet="work_tbl" />
+      <End Role="Canditate_info" EntitySet="Canditate_info" />
+    </AssociationSet>
+    <AssociationSet Name="FK__edu_dtl_t__edu_i__47DBAE45" Association="Self.FK__edu_dtl_t__edu_i__47DBAE45">
+      <End Role="Edu_tbl" EntitySet="Edu_tbl" />
+      <End Role="edu_dtl_tbl" EntitySet="edu_dtl_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Edu_tbl__Candida__2B3F6F97" Association="Self.FK__Edu_tbl__Candida__2B3F6F97">
+      <End Role="Canditate_info" EntitySet="Canditate_info" />
+      <End Role="Edu_tbl" EntitySet="Edu_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Question___Cours__31EC6D26" Association="Self.FK__Question___Cours__31EC6D26">
+      <End Role="Course_tbl" EntitySet="Course_tbl" />
+      <End Role="Question_bank" EntitySet="Question_bank" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Exam__exam___35BCFE0A" Association="Self.FK__User_Exam__exam___35BCFE0A">
+      <End Role="Exam_Schedule" EntitySet="Exam_Schedule" />
+      <End Role="User_Exam_Answer" EntitySet="User_Exam_Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Exam__Quest__36B12243" Association="Self.FK__User_Exam__Quest__36B12243">
+      <End Role="Question_bank" EntitySet="Question_bank" />
+      <End Role="User_Exam_Answer" EntitySet="User_Exam_Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Exam__user___34C8D9D1" Association="Self.FK__User_Exam__user___34C8D9D1">
+      <End Role="Canditate_info" EntitySet="Canditate_info" />
+      <End Role="User_Exam_Answer" EntitySet="User_Exam_Answer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__work_dtl___work___3C69FB99" Association="Self.FK__work_dtl___work___3C69FB99">
+      <End Role="work_tbl" EntitySet="work_tbl" />
+      <End Role="work_dtl_tbl" EntitySet="work_dtl_tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK__work_tbl__Candid__3B75D760" Association="Self.FK__work_tbl__Candid__3B75D760">
+      <End Role="Canditate_info" EntitySet="Canditate_info" />
+      <End Role="work_tbl" EntitySet="work_tbl" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

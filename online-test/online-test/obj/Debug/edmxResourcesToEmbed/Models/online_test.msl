@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Database1ModelStoreContainer" CdmEntityContainer="Database1Entities1">
+    <EntitySetMapping Name="assigned_user_exam">
+      <EntityTypeMapping TypeName="Database1Model.assigned_user_exam">
+        <MappingFragment StoreEntitySet="assigned_user_exam">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Canditate_info">
+      <EntityTypeMapping TypeName="Database1Model.Canditate_info">
+        <MappingFragment StoreEntitySet="Canditate_info">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Cell_no" ColumnName="Cell_no" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CNIC" ColumnName="CNIC" />
+          <ScalarProperty Name="edu_dtl" ColumnName="edu_dtl" />
+          <ScalarProperty Name="work_exp" ColumnName="work_exp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Course_tbl">
+      <EntityTypeMapping TypeName="Database1Model.Course_tbl">
+        <MappingFragment StoreEntitySet="Course_tbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Credit_hr" ColumnName="Credit_hr" />
+          <ScalarProperty Name="Course_id" ColumnName="Course_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Edu_tbl">
+      <EntityTypeMapping TypeName="Database1Model.Edu_tbl">
+        <MappingFragment StoreEntitySet="Edu_tbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Candidate_id" ColumnName="Candidate_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exam_Schedule">
+      <EntityTypeMapping TypeName="Database1Model.Exam_Schedule">
+        <MappingFragment StoreEntitySet="Exam_Schedule">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Exam_date" ColumnName="Exam_date" />
+          <ScalarProperty Name="Exam_title" ColumnName="Exam_title" />
+          <ScalarProperty Name="Exam_duration" ColumnName="Exam_duration" />
+          <ScalarProperty Name="Exam_total_question" ColumnName="Exam_total_question" />
+          <ScalarProperty Name="Exam_status" ColumnName="Exam_status" />
+          <ScalarProperty Name="Course_id" ColumnName="Course_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Manager_info">
+      <EntityTypeMapping TypeName="Database1Model.Manager_info">
+        <MappingFragment StoreEntitySet="Manager_info">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Pasword" ColumnName="Pasword" />
+          <ScalarProperty Name="Cell_no" ColumnName="Cell_no" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Question_bank">
+      <EntityTypeMapping TypeName="Database1Model.Question_bank">
+        <MappingFragment StoreEntitySet="Question_bank">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Option_1" ColumnName="Option_1" />
+          <ScalarProperty Name="Option_2" ColumnName="Option_2" />
+          <ScalarProperty Name="Option_3" ColumnName="Option_3" />
+          <ScalarProperty Name="C_Option_4" ColumnName=" Option_4" />
+          <ScalarProperty Name="Course_id" ColumnName="Course_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Exam_Answer">
+      <EntityTypeMapping TypeName="Database1Model.User_Exam_Answer">
+        <MappingFragment StoreEntitySet="User_Exam_Answer">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="exam_id" ColumnName="exam_id" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Question_id" ColumnName="Question_id" />
+          <ScalarProperty Name="Marks" ColumnName="Marks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="work_dtl_tbl">
+      <EntityTypeMapping TypeName="Database1Model.work_dtl_tbl">
+        <MappingFragment StoreEntitySet="work_dtl_tbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="work_id" ColumnName="work_id" />
+          <ScalarProperty Name="Company_name" ColumnName="Company_name" />
+          <ScalarProperty Name="Job_title" ColumnName="Job_title" />
+          <ScalarProperty Name="Start_year" ColumnName="Start_year" />
+          <ScalarProperty Name="End_year" ColumnName="End_year" />
+          <ScalarProperty Name="Job_description" ColumnName="Job_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="work_tbl">
+      <EntityTypeMapping TypeName="Database1Model.work_tbl">
+        <MappingFragment StoreEntitySet="work_tbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Candidate_id" ColumnName="Candidate_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="edu_dtl_tbl">
+      <EntityTypeMapping TypeName="Database1Model.edu_dtl_tbl">
+        <MappingFragment StoreEntitySet="edu_dtl_tbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="edu_id" ColumnName="edu_id" />
+          <ScalarProperty Name="Passing_year" ColumnName="Passing_year" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
